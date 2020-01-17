@@ -118,15 +118,15 @@ int main(int argc, char **argv)
 		if(millis-lastmillis>200) lastmillis = millis-200;
 		else if(millis-lastmillis<1) lastmillis = millis-1;
 		if(millis-lastmillis<minmillis) SDL_Delay(minmillis-(millis-lastmillis));
-		cleardlights();
-		updateworld(millis);
+		//cleardlights();
+		//updateworld(millis);
 		fps = 30.0f;
 		fps = (1000.0f/curtime+fps*50)/51;
-		computeraytable(player1->o.x, player1->o.y);
-		readdepth(scr_w, scr_h);
-		SDL_GL_SwapBuffers(); 
-		updatevol(); 
-		gl_drawframe(scr_w, scr_h, fps);
+		//computeraytable(player1->o.x, player1->o.y);
+		//readdepth(scr_w, scr_h);
+		//SDL_GL_SwapBuffers(); 
+		//updatevol(); 
+		//gl_drawframe(scr_w, scr_h, fps);
 		SDL_Event event;
 		int lasttype = 0, lastbut = 0;
 		while(SDL_PollEvent(&event))
