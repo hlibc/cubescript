@@ -107,9 +107,9 @@ int main(int argc, char **argv)
 		execfile("data/defaults.cfg");
 	exec("autoexec.cfg");
 
-	log("localconnect");
-	localconnect();
-	changemapserv("grafland", -2); 
+	//log("localconnect");
+	//localconnect();
+	//changemapserv("grafland", -2); 
 	
 	log("mainloop");
 	int ignore = 5;
