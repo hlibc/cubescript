@@ -85,23 +85,24 @@ int main(int argc, char **argv)
 
 	log("basetex");
 	int xs, ys;
+	/*
 	if(!installtex(2,  path(newstring("data/newchars.png")), xs, ys) || 
 	   !installtex(4,  path(newstring("data/explosion.jpg")), xs, ys) ||
 	   !installtex(5,  path(newstring("data/items.png")), xs, ys) ||
 	   !installtex(1,  path(newstring("data/crosshair.png")), xs, ys)) 
 		fatal("could not find core textures (hint: run cube from the parent of the bin directory)");
-
+	*/
 	log("sound");
 	initsound();
 
 	log("cfg");
-	newmenu("frags\tpj\tping\tteam\tname");
-	newmenu("ping\tplr\tserver");
+	//newmenu("frags\tpj\tping\tteam\tname");
+	//newmenu("ping\tplr\tserver");
 	exec("data/keymap.cfg");
-	exec("data/menus.cfg");
-	exec("data/prefabs.cfg");
-	exec("data/sounds.cfg");
-	exec("servers.cfg");
+	//exec("data/menus.cfg");
+	//exec("data/prefabs.cfg");
+	//exec("data/sounds.cfg");
+	//exec("servers.cfg");
 	if(!execfile("config.cfg")) 
 		execfile("data/defaults.cfg");
 	exec("autoexec.cfg");
