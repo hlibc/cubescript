@@ -111,25 +111,10 @@ int main(int argc, char **argv)
 				case SDL_QUIT:
 					quit();
 					break;
-
 				case SDL_KEYDOWN: 
 				case SDL_KEYUP: 
 					keypress(event.key.keysym.sym, event.key.state==SDL_PRESSED, event.key.keysym.unicode);
-					break;
-
-				case SDL_MOUSEMOTION:
-					if(ignore) { ignore--; break; };
-					mousemove(event.motion.xrel, event.motion.yrel);
-					break;
-
-				case SDL_MOUSEBUTTONDOWN:
-				case SDL_MOUSEBUTTONUP:
-					if(lasttype==event.type && lastbut==event.button.button) 
-						break; // why?? get event twice without it
-					keypress(-event.button.button, event.button.state!=0, 0);
-					lasttype = event.type;
-					lastbut = event.button.button;
-					break;
+					break; 
 			};
 		};
 	};
