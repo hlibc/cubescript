@@ -84,33 +84,14 @@ int main(int argc, char **argv)
 	gl_init(scr_w, scr_h);
 
 	log("basetex");
-	int xs, ys;
-	/*
-	if(!installtex(2,  path(newstring("data/newchars.png")), xs, ys) || 
-	   !installtex(4,  path(newstring("data/explosion.jpg")), xs, ys) ||
-	   !installtex(5,  path(newstring("data/items.png")), xs, ys) ||
-	   !installtex(1,  path(newstring("data/crosshair.png")), xs, ys)) 
-		fatal("could not find core textures (hint: run cube from the parent of the bin directory)");
-	*/
+	int xs, ys; 
 	log("sound");
-	initsound();
-
-	log("cfg");
-	//newmenu("frags\tpj\tping\tteam\tname");
-	//newmenu("ping\tplr\tserver");
-	exec("data/keymap.cfg");
-	//exec("data/menus.cfg");
-	//exec("data/prefabs.cfg");
-	//exec("data/sounds.cfg");
-	//exec("servers.cfg");
+	initsound(); 
+	log("cfg"); 
+	exec("data/keymap.cfg"); 
 	if(!execfile("config.cfg")) 
 		execfile("data/defaults.cfg");
-	exec("autoexec.cfg");
-
-	//log("localconnect");
-	//localconnect();
-	//changemapserv("grafland", -2); 
-	
+	exec("autoexec.cfg"); 
 	log("mainloop");
 	int ignore = 5;
 	for(;;)
@@ -118,16 +99,9 @@ int main(int argc, char **argv)
 		int millis = SDL_GetTicks()*gamespeed/100;
 		if(millis-lastmillis>200) lastmillis = millis-200;
 		else if(millis-lastmillis<1) lastmillis = millis-1;
-		if(millis-lastmillis<minmillis) SDL_Delay(minmillis-(millis-lastmillis));
-		//cleardlights();
-		//updateworld(millis);
+		if(millis-lastmillis<minmillis) SDL_Delay(minmillis-(millis-lastmillis)); 
 		fps = 30.0f;
-		fps = (1000.0f/curtime+fps*50)/51;
-		//computeraytable(player1->o.x, player1->o.y);
-		//readdepth(scr_w, scr_h);
-		//SDL_GL_SwapBuffers(); 
-		//updatevol(); 
-		//gl_drawframe(scr_w, scr_h, fps);
+		fps = (1000.0f/curtime+fps*50)/51; 
 		SDL_Event event;
 		int lasttype = 0, lastbut = 0;
 		while(SDL_PollEvent(&event))
